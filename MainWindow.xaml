@@ -1,0 +1,20 @@
+﻿<Window x:Class="CardGameProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardGameProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" Height="50" Margin="266,149,0,0" VerticalAlignment="Top" Width="80" Click="button_Click"/>
+        <TextBox x:Name="textBoxDeckSize" HorizontalAlignment="Left" Height="50" Margin="266,204,0,0" TextWrapping="Wrap" Text="Deck Size" VerticalAlignment="Top" Width="80"/>
+        <Button x:Name="buttonHigher" Content="Higher" HorizontalAlignment="Left" Height="100" Margin="373,46,0,0" VerticalAlignment="Top" Width="100" Click="buttonHigher_Click"/>
+        <Button x:Name="buttonLower" Content="Lower" HorizontalAlignment="Left" Height="100" Margin="373,154,0,0" VerticalAlignment="Top" Width="100" Click="buttonLower_Click"/>
+        <TextBlock x:Name="textBlockCard" HorizontalAlignment="Left" Height="100" Margin="58,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="80" TextAlignment="Center"/>
+        <TextBlock x:Name="textBlockScore" HorizontalAlignment="Left" Height="40" Margin="87,33,0,0" TextWrapping="Wrap" Text="Score:" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="textBlockCardsLeft" HorizontalAlignment="Left" Height="40" Margin="87,88,0,0" TextWrapping="Wrap" Text="Card # of Deck Size" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="textBlockGameOver" HorizontalAlignment="Left" Height="90" Margin="266,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+
+    </Grid>
+</Window>

@@ -37,7 +37,7 @@ namespace CardGameProject
         {
             Reset();
             deckSize = Convert.ToInt32(textBoxDeckSize.Text);
-            if(deckSize > 1)
+            if (deckSize > 1)
             {
                 deck = new int[deckSize];
                 for (int i = 0; i < deckSize; i++)
@@ -61,7 +61,7 @@ namespace CardGameProject
                 score++;
                 cardNumber++;
                 textBlockCard.Text = Convert.ToString(deck[nextCard]);
-                textBlockScore.Text = "Score: " +  Convert.ToString(score);
+                textBlockScore.Text = "Score: " + Convert.ToString(score);
                 textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize;
             }
             else
@@ -101,7 +101,7 @@ namespace CardGameProject
         }
         public void WhenToStop()
         {
-            if(cardNumber == deckSize)
+            if (cardNumber == deckSize)
             {
                 buttonHigher.IsEnabled = false;
                 buttonLower.IsEnabled = false;
@@ -110,8 +110,6 @@ namespace CardGameProject
         }
         public void NextCard()
         {
-
-
             if (deck[nextCard] > deck[nextCard + 1])
             {
                 higherOrLower = 0;
@@ -122,7 +120,6 @@ namespace CardGameProject
                 higherOrLower = 1;
                 nextCard++;
             }
-
         }
 
         private void buttonLower_Click(object sender, RoutedEventArgs e)
@@ -131,7 +128,6 @@ namespace CardGameProject
             NextCard();
             ScoreCalc();
             WhenToStop();
-            
         }
 
         private void buttonHigher_Click(object sender, RoutedEventArgs e)
@@ -140,7 +136,6 @@ namespace CardGameProject
             NextCard();
             ScoreCalc();
             WhenToStop();
-            
         }
     }
 }

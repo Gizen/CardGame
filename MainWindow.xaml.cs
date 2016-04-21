@@ -46,7 +46,7 @@ namespace CardGameProject
                 }
                 Shuffle();
                 textBlockCard.Text = Convert.ToString(deck[nextCard]);
-                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize + ".";
+                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize;
             }
             else
             {
@@ -62,14 +62,14 @@ namespace CardGameProject
                 cardNumber++;
                 textBlockCard.Text = Convert.ToString(deck[nextCard]);
                 textBlockScore.Text = "Score: " +  Convert.ToString(score);
-                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize + ".";
+                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize;
             }
             else
             {
                 cardNumber++;
                 textBlockCard.Text = Convert.ToString(deck[nextCard]);
                 textBlockScore.Text = "Score: " + Convert.ToString(score);
-                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize + ".";
+                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize;
             }
         }
         public void Reset()
@@ -79,6 +79,7 @@ namespace CardGameProject
             nextCard = 0;
             buttonHigher.IsEnabled = true;
             buttonLower.IsEnabled = true;
+            textBlockGameOver.Text = "";
 
         }
         public void Shuffle()

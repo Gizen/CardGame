@@ -25,9 +25,9 @@ namespace CardGameProject
         int[] deck;
         Random rnd = new Random();
         int score = 0;
-        int higherOrLower;
+        bool higherOrLower;
         int nextCard = 0;
-        int choice;
+        bool choice;
         public MainWindow()
         {
             InitializeComponent();
@@ -45,8 +45,7 @@ namespace CardGameProject
                     deck[i] = i + 1;
                 }
                 Shuffle();
-                textBlockCard.Text = Convert.ToString(deck[nextCard]);
-                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize;
+                ChangeText();
             }
             else
             {
@@ -60,16 +59,12 @@ namespace CardGameProject
             {
                 score++;
                 cardNumber++;
-                textBlockCard.Text = Convert.ToString(deck[nextCard]);
-                textBlockScore.Text = "Score: " + Convert.ToString(score);
-                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize;
+                ChangeText();
             }
             else
             {
                 cardNumber++;
-                textBlockCard.Text = Convert.ToString(deck[nextCard]);
-                textBlockScore.Text = "Score: " + Convert.ToString(score);
-                textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize;
+                ChangeText();
             }
         }
         public void Reset()
@@ -80,6 +75,7 @@ namespace CardGameProject
             buttonHigher.IsEnabled = true;
             buttonLower.IsEnabled = true;
             textBlockGameOver.Text = "";
+            textBlockScore.Text = "";
 
         }
         public void Shuffle()
@@ -112,19 +108,19 @@ namespace CardGameProject
         {
             if (deck[nextCard] > deck[nextCard + 1])
             {
-                higherOrLower = 0;
+                higherOrLower = false;
                 nextCard++;
             }
             else if (deck[nextCard] < deck[nextCard + 1])
             {
-                higherOrLower = 1;
+                higherOrLower = true;
                 nextCard++;
             }
         }
 
         private void buttonLower_Click(object sender, RoutedEventArgs e)
         {
-            choice = 0;
+            choice = false;
             NextCard();
             ScoreCalc();
             WhenToStop();
@@ -132,10 +128,16 @@ namespace CardGameProject
 
         private void buttonHigher_Click(object sender, RoutedEventArgs e)
         {
-            choice = 1;
+            choice = true;
             NextCard();
             ScoreCalc();
             WhenToStop();
+        }
+        public void ChangeText()
+        {
+            textBlockCard.Text = Convert.ToString(deck[nextCard]);
+            textBlockScore.Text = "Score: " + Convert.ToString(score);
+            textBlockCardsLeft.Text = "Card " + cardNumber + " of " + deckSize;
         }
     }
 }
